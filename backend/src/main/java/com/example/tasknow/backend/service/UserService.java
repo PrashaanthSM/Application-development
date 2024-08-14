@@ -27,6 +27,15 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email)
+                             .orElseThrow(() -> new RuntimeException("User not found with email: " + email));
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);
     }
@@ -40,6 +49,10 @@ public class UserService {
     }
 
     public List<User> findAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public List<User> getAlluser() {
         return userRepository.findAll();
     }
 }

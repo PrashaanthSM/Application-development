@@ -49,7 +49,7 @@ public class User {
         this.email = email;
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.role = role; // NEW: Set the role in the constructor
     }
 
     // Getters and Setters
@@ -101,12 +101,12 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public String getRole() { 
+        return role; // NEW: Getter for role
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRole(String role) { 
+        this.role = role; // NEW: Setter for role
     }
 
     public Profile getProfile() {

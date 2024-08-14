@@ -1,7 +1,5 @@
 package com.example.tasknow.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -10,7 +8,6 @@ public class TaskAssignment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Long id;
 
     @ManyToOne
@@ -19,11 +16,9 @@ public class TaskAssignment {
 
     @ManyToOne
     @JoinColumn(name = "task_id", nullable = false)
-    @JsonIgnore
     private Task task;
 
     @Column(nullable = false)
-    @JsonIgnore
     private String status;
 
     // Constructors

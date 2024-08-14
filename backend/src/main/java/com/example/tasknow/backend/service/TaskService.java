@@ -18,19 +18,22 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
+    }
+
     public Optional<Task> getTaskById(Long id) {
         return taskRepository.findById(id);
     }
 
-    public List<Task> getAllTasks() {
-        return taskRepository.findAll();
+    public Task updateTask(Task task) {
+        return taskRepository.save(task);
     }
 
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
-
-    public Task updateTask(Task task) {
-        return taskRepository.save(task);
+    public List<Task> findTasksByAssigneeEmail(String email) {
+        return taskRepository.findByAssigneeEmail(email);
     }
 }
